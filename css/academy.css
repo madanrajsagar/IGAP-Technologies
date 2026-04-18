@@ -1,0 +1,66 @@
+.academy-hero-panel img {
+  width: 100%;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(9, 38, 86, 0.08);
+  border-radius: 1.5rem;
+  background: rgba(7, 28, 69, 0.94);
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.course-card {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.course-card .btn {
+  width: fit-content;
+  margin-top: auto;
+}
+
+.academy-layout {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.internship-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.internship-grid .soft-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.internship-grid .soft-card::after {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  content: "";
+}
+
+@media (max-width: 960px) {
+  .internship-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .internship-grid {
+    grid-template-columns: 1fr;
+  }
+}

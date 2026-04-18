@@ -1,0 +1,57 @@
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.service-panel {
+  position: relative;
+  display: grid;
+  gap: 1.15rem;
+  height: 100%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(73, 212, 247, 0.14), transparent 34%),
+    rgba(255, 255, 255, 0.86);
+}
+
+.service-panel::after {
+  position: absolute;
+  inset: auto 1.5rem 0 1.5rem;
+  height: 4px;
+  border-radius: 999px 999px 0 0;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  content: "";
+  transform: scaleX(0.25);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+
+.service-panel:hover::after {
+  transform: scaleX(1);
+}
+
+.service-panel-head {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.service-panel-head p {
+  margin-top: 0.35rem;
+}
+
+.service-shift {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--primary);
+  font-size: 0.94rem;
+  font-weight: 800;
+}
+
+@media (max-width: 860px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
